@@ -18,10 +18,15 @@ import tensorflow as tf
 from tensorflow.python.ops import math_ops
 import tf_metrics
 import pickle
-flags = tf.flags
+# flags 객체를 사용하면 고정값으로 되어 있는 기본적인 데이터를 편리하게 사용할 수 있다.
+# flags 객체는 int, float, boolean, string 의 값을 저장하고, 
+# 가져다 사용하기 쉽게 해주는 기능을 한다.
+flags = tf.flags 
 
 FLAGS = flags.FLAGS
 
+# DEFINE_데이터형으로 시작되는 함수를 통해 key, value 형식과 비슷하게 원하는 데이터를 정의 함
+# 세번째 arg는 도큐먼트를 위한 참고 string임
 flags.DEFINE_string(
     "task_name", "NER", "The name of the task to train."
 )
