@@ -153,9 +153,9 @@ class DataProcessor(object):
             words = []
             labels = []
             for line in f:
-                contends = line.strip()
+                contends = line.strip() #문자열의 맨앞과 맨뒤의 whitespace 제거
                 if len(contends) == 0:
-                    assert len(words) == len(labels)
+                    assert len(words) == len(labels) # assert condition -> condition이 맞지 않으면 AssertionError
                     if len(words) > 30:
                         while len(words) > 30:
                             tmplabel = labels[:30]
